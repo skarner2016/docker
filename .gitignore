@@ -1,0 +1,9 @@
+/logs/mysql
+/logs/nginx
+/logs/php
+/logs/redis
+
+/data/mysql
+/data/redis
+/www
+/data
