@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="23148256-4164-4f4d-a6e9-9864cd329dfa" name="默认变更列表" comment="" />
+    <list default="true" id="23148256-4164-4f4d-a6e9-9864cd329dfa" name="默认变更列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,10 +36,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/php/72" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/php/72" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -64,6 +68,10 @@
       <workItem from="1627546013261" duration="1360000" />
       <workItem from="1627648290119" duration="685000" />
       <workItem from="1627868974196" duration="1745000" />
+      <workItem from="1628760735289" duration="333000" />
+      <workItem from="1630380371875" duration="472000" />
+      <workItem from="1631691196021" duration="755000" />
+      <workItem from="1631697983922" duration="419000" />
     </task>
     <servers />
   </component>
