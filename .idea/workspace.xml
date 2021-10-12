@@ -3,7 +3,55 @@
   <component name="ChangeListManager">
     <list default="true" id="23148256-4164-4f4d-a6e9-9864cd329dfa" name="默认变更列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/nginx/default.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/pear.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php-fpm.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php-fpm.conf.default" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php-fpm.d/docker.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php-fpm.d/www.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php-fpm.d/www.conf.default" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php-fpm.d/zz-docker.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php/conf.d/docker-php-ext-bcmath.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php/conf.d/docker-php-ext-gd.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php/conf.d/docker-php-ext-pdo_mysql.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php/conf.d/docker-php-ext-redis.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php/conf.d/docker-php-ext-sodium.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php/php.ini-development" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/php/php.ini-production" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/php/72/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/pear.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php-fpm.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php-fpm.conf.default" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php-fpm.d/docker.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php-fpm.d/www.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php-fpm.d/www.conf.default" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php-fpm.d/zz-docker.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php/conf.d/docker-php-ext-bcmath.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php/conf.d/docker-php-ext-gd.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php/conf.d/docker-php-ext-pdo_mysql.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php/conf.d/docker-php-ext-redis.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php/conf.d/docker-php-ext-sodium.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php/php.ini-development" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/72/etc/php/php.ini-production" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/php/74/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/pear.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php-fpm.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php-fpm.conf.default" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php-fpm.d/docker.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php-fpm.d/www.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php-fpm.d/www.conf.default" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php-fpm.d/zz-docker.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php/conf.d/docker-php-ext-bcmath.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php/conf.d/docker-php-ext-gd.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php/conf.d/docker-php-ext-pdo_mysql.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php/conf.d/docker-php-ext-redis.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php/conf.d/docker-php-ext-sodium.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php/php.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php/php.ini-development" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/74/etc/php/php.ini-production" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +84,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config/nginx" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config/nginx" />
+      <recent name="$PROJECT_DIR$/php/80" />
+      <recent name="$PROJECT_DIR$/config/php" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/php/72" />
     </key>
@@ -72,6 +123,7 @@
       <workItem from="1630380371875" duration="472000" />
       <workItem from="1631691196021" duration="755000" />
       <workItem from="1631697983922" duration="419000" />
+      <workItem from="1633919561292" duration="5824000" />
     </task>
     <servers />
   </component>

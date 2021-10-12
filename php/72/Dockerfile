@@ -1,4 +1,4 @@
-FROM php:7.2.34
+FROM php:7.2.34-fpm-buster
 
 WORKDIR /var/www
 
@@ -13,6 +13,8 @@ RUN apt-get update \
     && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ \
     && apt-get install -y libwebp-dev libjpeg-dev libpng-dev libfreetype6-dev \
     && cp /usr/local/etc/php/php.ini-$PHP_ENV /usr/local/etc/php/php.ini \
-    && docker-php-ext-install php-cli php-common bcmath pdo_mysql gd \
+    && docker-php-ext-install bcmath pdo_mysql gd \
     && pecl install redis \
-    && docker-php-ext-enable redis
+    && pecl install swoole \
+    && pecl install xdebug \
+    && docker-php-ext-enable redis swoole xdebug
