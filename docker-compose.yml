@@ -8,10 +8,10 @@ services:
       - ../../workspace:/var/www
       - ./logs/php/72:/var/log/php
     working_dir: /var/www
-#    restart: always
+  #    restart: always
 
   php74:
-    build: ./php/80
+    build: ./php/74
     ports:
       - 9002:9000
     volumes:
@@ -24,11 +24,12 @@ services:
     build: ./php/80
     ports:
       - 9003:9000
+      - 8000:8000
     volumes:
       - ../../workspace:/var/www
       - ./logs/php/80:/var/log/php
     working_dir: /var/www
-#    restart: always
+    command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
 
   nginx:
     image: nginx:stable-alpine
@@ -37,7 +38,6 @@ services:
       - 8002:8002
       - 8003:8003
     volumes:
-      - ../../workspace:/var/www
       - ./config/nginx:/etc/nginx/conf.d/
       - ./logs/nginx:/var/log/nginx
     working_dir: /var/www
