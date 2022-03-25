@@ -16,5 +16,6 @@ RUN apt-get update \
     && docker-php-ext-install bcmath pdo_mysql gd \
     && pecl install redis \
     && pecl install swoole \
-    && pecl install xdebug \
-    && docker-php-ext-enable redis swoole xdebug
+#    && pecl install xdebug \
+    && docker-php-ext-enable redis swoole  \
+#    xdebug

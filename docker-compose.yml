@@ -4,32 +4,45 @@ services:
     build: ./php/72
     ports:
       - 9001:9000
+      - 8072:8072
     volumes:
-      - ../../workspace:/var/www
+      - ../../../workspace:/var/www
       - ./logs/php/72:/var/log/php
     working_dir: /var/www
-  #    restart: always
+    restart: always
 
   php74:
     build: ./php/74
     ports:
       - 9002:9000
+      - 8074:8074
     volumes:
-      - ../../workspace:/var/www
+      - ../../../workspace:/var/www
       - ./logs/php/74:/var/log/php
     working_dir: /var/www
-  #    restart: always
+#    restart: always
 
   php80:
     build: ./php/80
     ports:
       - 9003:9000
-      - 8000:8000
+      - 8080:8080
     volumes:
-      - ../../workspace:/var/www
+      - ../../../workspace:/var/www
       - ./logs/php/80:/var/log/php
     working_dir: /var/www
     command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
+
+  php81:
+    build: ./php/81
+    ports:
+      - 9004:9000
+      - 8081:8081
+    volumes:
+      - ../../../workspace:/var/www
+      - ./logs/php/81:/var/log/php
+    working_dir: /var/www
+#    command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
 
   nginx:
     image: nginx:stable-alpine
