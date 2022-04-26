@@ -1,6 +1,7 @@
 version: "3"
 services:
   php72:
+    container_name: php72
     build: ./php/72
     ports:
       - 9001:9000
@@ -23,6 +24,7 @@ services:
 #    restart: always
 
   php80:
+    container_name: php80
     build: ./php/80
     ports:
       - 9003:9000
@@ -34,6 +36,7 @@ services:
     command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
 
   php81:
+    container_name: php81
     build: ./php/81
     ports:
       - 9004:9000
@@ -45,6 +48,7 @@ services:
 #    command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
 
   nginx:
+    container_name: nginx
     image: nginx:stable-alpine
     ports:
       - 8001:8001
@@ -57,6 +61,7 @@ services:
     restart: always
 
   mysql:
+    container_name: mysql
     image: mysql:latest
     ports:
       - 3306:3306
@@ -69,6 +74,7 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
 
   mysql57:
+    container_name: mysql57
     image: mysql:5.7
     ports:
       - 3307:3306
@@ -81,6 +87,7 @@ services:
       MYSQL_ROOT_PASSWORD: 123456
 
   redis:
+    container_name: redis
     image: redis:alpine
     ports:
       - 6379:6379
