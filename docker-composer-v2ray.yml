@@ -6,5 +6,6 @@ services:
     volumes:
       - /etc/v2ray:/etc/v2ray
     ports:
-      - "16823:16823"
+      - "7000:7000"
+      - "7500:7500"
     command: ["v2ray", "-config=/etc/v2ray/config.json"]
