@@ -67,11 +67,12 @@ services:
       - 3306:3306
     volumes:
       - ./data/mysql:/var/lib/mysql
+      - ./data/mysql-files:/var/lib/mysql-files
       - ./config/mysql:/etc/mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASS
 
   mysql57:
     container_name: mysql57
@@ -84,7 +85,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASS
 
   redis:
     container_name: redis

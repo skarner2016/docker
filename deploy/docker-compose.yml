@@ -1,0 +1,44 @@
+version: "3"
+services:
+  php80:
+    container_name: php80
+    image: php:8.0.25-fpm-alpine3.16
+    tty: true
+    ports:
+      - 9000:9000
+      - 9001:9001
+    volumes:
+      - ../:/var/www/html
+    working_dir: /var/www/html
+    restart: always
+
+  nginx:
+    container_name: nginx
+    image: nginx:stable-alpine
+    ports:
+      - 80:8000
+    volumes:
+      - ../:/var/www/html
+      - ./nginx.conf.d/:/etc/nginx/conf.d/
+    working_dir: /var/www
+    restart: always
+
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./config/mysql:/etc/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASS
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    restart: always
