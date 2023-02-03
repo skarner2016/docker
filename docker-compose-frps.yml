@@ -1,9 +1,0 @@
-version: "3"
-services:
-  frps:
-    image: snowdreamtech/frps
-    container_name: frps
-    volumes:
-      - ./config/frp/frp.ini:/etc/frp/frps.ini
-    working_dir: /var/www
-    restart: always
