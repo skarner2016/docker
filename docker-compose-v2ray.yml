@@ -4,7 +4,7 @@ services:
   v2ray:
     image: v2ray/official:latest
     volumes:
-      - /etc/v2ray:/etc/v2ray
+      - ./config/v2ray:/etc/v2ray
     ports:
       - "7000:7000"
       - "7500:7500"
