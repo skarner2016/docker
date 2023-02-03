@@ -1,0 +1,32 @@
+{
+    "inbounds": [{
+      "port": 1080,   
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true
+      }
+    }],
+    "outbounds": [{
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [{
+          "address": "ec2-18-141-174-238.ap-southeast-1.compute.amazonaws.com",
+          "port": 7500,
+          "users": [{ "id": "c854860d-0c08-2c2f-f075-9bc7430f2a16" }]
+        }]
+      }
+    },{
+      "protocol": "freedom",
+      "tag": "direct",
+      "settings": {}
+    }],
+    "routing": {
+      "domainStrategy": "IPOnDemand",
+      "rules": [{
+        "type": "field",
+        "ip": ["geoip:private"],
+        "outboundTag": "direct"
+      }]
+    }
+  }
