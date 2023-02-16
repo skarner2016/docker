@@ -12,7 +12,6 @@ services:
       - ./config/v2ray:/etc/v2ray
     ports:
       - "7000:7000"
-      - "7500:7500"
     networks:
       - v2ray
     command: ["v2ray", "-config=/etc/v2ray/config.json"]
