@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  showdoc:
+    image: star7th/showdoc:latest
+    container_name: showdoc
+    ports:
+      - 4999:80
+    volumes:
+      - ${DATA_SPACE}/showdoc/html:/var/www/html/
+    restart: always
