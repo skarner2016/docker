@@ -48,3 +48,8 @@ services:
     tty: true
     working_dir: /var/www
     restart: always
+
+networks:
+  docker_default:
+    external:
+      name: docker-default
