@@ -5,49 +5,17 @@ networks:
     driver: bridge
 
 services:
-  grafana:
-    container_name: grafana
-    image: grafana/grafana:latest
-    hostname: grafana
+  la10:
+    image: php:fpm-alpine3.17
+    container_name: la10
+    hostname: la10
     ports:
-      - 3000:3000
+      - 8999:8999
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    volumes:
+      - ${WORK_SPACE}:/var/www
     networks:
       - monitor
     restart: always
-
-  prometheus:
-    container_name: prometheus
-    image: prom/prometheus
-    hostname: prometheus
-    ports:
-      - 9090:9090
-    networks:
-      - monitor
-    restart: always
-
-  node-exporter:
-    container_name: node-exporter
-    image: quay.io/prometheus/node-exporter
-    hostname: node-exporter
-    ports:
-      - 9100:9100
-    networks:
-      - monitor
-    restart: always
-
-  mysql-exporter:
-    image: prom/mysqld-exporter
-    container_name: mysql-exporter
-    hostname: mysql-exporter
-    restart: always
-    ports:
-        - "9104:9104"
-    environment:
-        DATA_SOURCE_NAME: 'monitor:Monitor@123(172.17.0.1:3306)'
-    networks:
-        - monitor
-
-
-
-
-
