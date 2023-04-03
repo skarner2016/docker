@@ -49,6 +49,18 @@ services:
     working_dir: /var/www
     restart: always
 
+  php82:
+    image: skarner2016/php:82
+    container_name: php82
+    ports:
+      - 9005:9005
+    volumes:
+      - ${WORK_SPACE}:/var/www
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    restart: always
+
 networks:
   docker_default:
     external:

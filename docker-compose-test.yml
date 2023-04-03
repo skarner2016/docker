@@ -6,8 +6,8 @@ networks:
 
 services:
   la10:
-    image: php:fpm-alpine3.17
-    container_name: la10
+    image: skarner2016:php82
+    container_name: php82
     hostname: la10
     ports:
       - 8999:8999
