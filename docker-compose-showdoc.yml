@@ -7,5 +7,5 @@ services:
     ports:
       - 4999:80
     volumes:
-      - ${DATA_SPACE}/showdoc/html:/var/www/html/
+      - ./data/showdoc/html:/var/www/html/
     restart: always
