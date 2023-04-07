@@ -1,11 +1,17 @@
 version: "3"
+
+networks:
+  v2ray:
+    driver: bridge
+
 services:
 
   v2ray:
     image: v2ray/official:latest
     volumes:
-      - /etc/v2ray:/etc/v2ray
+      - ./config/v2ray:/etc/v2ray
     ports:
       - "7000:7000"
-      - "7500:7500"
+    networks:
+      - v2ray
     command: ["v2ray", "-config=/etc/v2ray/config.json"]
