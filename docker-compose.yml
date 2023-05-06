@@ -1,46 +1,11 @@
 version: "3"
 services:
-  php72:
-    container_name: php72
-    build: ./php/72
+  php82:
+    image: skarner2016/php:82
+    container_name: php82
     ports:
-      - 9001:9000
-      - 8072:8072
-    volumes:
-      - ../../../workspace:/var/www
-      - ./logs/php/72:/var/log/php
-    working_dir: /var/www
-    restart: always
-
-  php74:
-    build: ./php/74
-    ports:
-      - 9002:9000
-      - 8074:8074
-    volumes:
-      - ../../../workspace:/var/www
-      - ./logs/php/74:/var/log/php
-    working_dir: /var/www
-#    restart: always
-
-  php80:
-    container_name: php80
-    build: ./php/80
-    ports:
-      - 9003:9000
-      - 8080:8080
-    volumes:
-      - ../../../workspace:/var/www
-      - ./logs/php/80:/var/log/php
-    working_dir: /var/www
-    command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
-
-  php81:
-    container_name: php81
-    build: ./php/81
-    ports:
-      - 9004:9000
-      - 8081:8081
+      - 9000:9000
+      - 8000:8000
     volumes:
       - ../../../workspace:/var/www
       - ./logs/php/81:/var/log/php
@@ -51,9 +16,7 @@ services:
     container_name: nginx
     image: nginx:stable-alpine
     ports:
-      - 8001:8001
-      - 8002:8002
-      - 8003:8003
+      - 8080:80
     volumes:
       - ./config/nginx:/etc/nginx/conf.d/
       - ./logs/nginx:/var/log/nginx
@@ -68,19 +31,6 @@ services:
     volumes:
       - ./data/mysql:/var/lib/mysql
       - ./config/mysql:/etc/mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456
-
-  mysql57:
-    container_name: mysql57
-    image: mysql:5.7
-    ports:
-      - 3307:3306
-    volumes:
-      - ./data/mysql57:/var/lib/mysql
-      - ./config/mysql57:/etc/mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
