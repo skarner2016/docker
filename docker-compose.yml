@@ -10,6 +10,7 @@ services:
       - ../../../workspace:/var/www
       - ./logs/php/81:/var/log/php
     working_dir: /var/www
+    restart: always
 #    command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
 
   nginx:
