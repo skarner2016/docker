@@ -19,10 +19,15 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ../../:/var/www
+      - ../../../workspace:/var/www
       - ./config/nginx:/etc/nginx/conf.d/
       - ./logs/nginx:/var/log/nginx
     working_dir: /var/www
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
     restart: always
 
   mysql:
