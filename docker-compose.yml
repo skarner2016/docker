@@ -19,7 +19,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ../../../workspace:/var/www
+      - ../../:/var/www
       - ./config/nginx:/etc/nginx/conf.d/
       - ./logs/nginx:/var/log/nginx
     working_dir: /var/www
