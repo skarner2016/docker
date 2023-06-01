@@ -11,6 +11,11 @@ services:
       - ./logs/php/81:/var/log/php
     working_dir: /var/www
     restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
 #    command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
 
   nginx:
@@ -42,6 +47,11 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 123456
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
 
   redis:
     container_name: redis
@@ -49,3 +59,8 @@ services:
     ports:
       - 6379:6379
     restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
