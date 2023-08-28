@@ -19,3 +19,18 @@ services:
       # 此处WEB UI 目标端口与内部端口务必保证相同，见问题1
       - 8081:8081
     restart: unless-stopped
+
+  samba:
+    image: dperson/samba
+    container_name: samba
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    ports:
+      - 139:139
+      - 445:445
+    volumes:
+      - ./downloads:/mount
+    command: '-u "username1;password1" -u "username2;password2" -s "share;/mount/;yes;yes;yes;all;none" -s "public;/mount/;yes;no;no;all;none"'
