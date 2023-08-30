@@ -1,0 +1,16 @@
+version: '3.1'
+ 
+services:
+ 
+  samba:
+    image: dperson/samba
+    container_name: samba
+    restart: always
+    ports:
+      - 139:139
+      - 445:445
+    volumes:
+      - ./downloads:/share
+    command: '-p                                              
+                -u "user;pass"
+                -s "share1;/share/dir1;yes;no;no;user;admin;admin;user专用"'
