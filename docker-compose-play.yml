@@ -24,7 +24,7 @@ services:
   plex:
     container_name: plex
     image: linuxserver/plex:1.20.1.3252-a78fef9a9-ls116
-    network_mode: bridge
+    # network_mode: bridge
     restart: unless-stopped
 
     # devices:
