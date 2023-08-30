@@ -26,8 +26,8 @@ services:
     container_name: samba
     restart: always
     ports:
-      - 139:139
-      - 445:445
+      - 3139:139
+      - 3445:445
     volumes:
       - ${DOWNLOAD_DIR}:/share
     command: '-p                                              
