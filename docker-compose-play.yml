@@ -82,7 +82,7 @@ services:
       - PGID=1000
       - TZ=Asia/Shanghai
       - WEBDAV_USERNAME=user
-      - TZ=pass
+      - WEBDAV_PASSWORD=pass
     ports:
       - 3082:8080
     volumes:
