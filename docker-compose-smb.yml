@@ -16,7 +16,7 @@ services:
     volumes:
       - ${DOWNLOAD_DIR}:/share
     command: '-p                                              
-                -u "skarner;NF@Z&gVKMyg%YZJrusTTKAs$6"
+                -u "skarner;MninzzHkHNg2P8MxBMLYKKYEg"
                 -s "share;/share;yes;no;no;skarner;admin;admin;skarner专用"'
 
 
