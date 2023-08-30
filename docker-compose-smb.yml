@@ -5,14 +5,18 @@ services:
   samba:
     image: dperson/samba
     container_name: samba
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai # 你的时区
     restart: always
     ports:
-      - 139:139
-      - 445:445
+      - 3139:139
+      - 3445:445
     volumes:
-      - ./smb:/share
+      - ${DOWNLOAD_DIR}:/share
     command: '-p                                              
-                -u "skarner;badpass"
+                -u "skarner;NF@Z&gVKMyg%YZJrusTTKAs$6"
                 -s "share;/share;yes;no;no;skarner;admin;admin;skarner专用"'
 
 
