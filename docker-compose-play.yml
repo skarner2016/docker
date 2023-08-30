@@ -84,7 +84,7 @@ services:
       - WEBDAV_USERNAME=user
       - TZ=pass
     ports:
-      - 9000:8080
+      - 3082:8080
     volumes:
       - ${DOWNLOAD_DIR}:/media
     restart: unless-stopped
