@@ -10,7 +10,7 @@ services:
       - 139:139
       - 445:445
     volumes:
-      - ./smb:/share
+      - ${DOWNLOAD_DIR}:/share
     command: '-p                                              
-                -u "user;pass"
-                -s "share1;/share/dir1;yes;no;no;user;admin;admin;user专用"'
+                -u "skarner;NF@Z&gVKMyg%YZJrusTTKAs$6"
+                -s "share;/share/dir1;yes;no;no;skarner;admin;admin;skarner专用"'
