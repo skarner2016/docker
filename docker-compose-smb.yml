@@ -10,7 +10,7 @@ services:
       - 139:139
       - 445:445
     volumes:
-      - ./downloads:/share
+      - ./smb:/share
     command: '-p                                              
                 -u "user;pass"
                 -s "share1;/share/dir1;yes;no;no;user;admin;admin;user专用"'
