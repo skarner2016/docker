@@ -24,6 +24,10 @@ services:
   samba:
     image: dperson/samba
     container_name: samba
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai # 你的时区
     restart: always
     ports:
       - 3139:139
@@ -32,4 +36,4 @@ services:
       - ${DOWNLOAD_DIR}:/share
     command: '-p                                              
                 -u "skarner;NF@Z&gVKMyg%YZJrusTTKAs$6"
-                -s "share;/share/dir1;yes;no;no;skarner;admin;admin;skarner专用"'
+                -s "share;/share;yes;no;no;skarner;admin;admin;skarner专用"'
