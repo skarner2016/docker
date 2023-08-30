@@ -58,3 +58,33 @@ services:
       # - /volume1/docker/plex/transcode:/transcode # this is not strictly necessary, but I've configured Plex to use this directory for transcoding. Should make it easier to backup only the configuration and not transcoding artifacts.
       - ${DOWNLOAD_DIR}:/data/Movies:ro
       - ${DOWNLOAD_DIR}:/data/Television:ro
+
+  kodi:
+    image: linuxserver/kodi-headless
+    container_name: kodi
+    environment:
+      # - PUID=1000
+      # - PGID=1000
+      - TZ=Asia/Shanghai
+    ports:
+      - 9091:8080
+      - 9090:9090
+      - 9777:9777/udp
+    volumes:
+      - ${DOWNLOAD_DIR}:/media
+    restart: unless-stopped
+
+  webdav:
+    image: ionelmc/webdav
+    container_name: webdav
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - WEBDAV_USERNAME=user
+      - TZ=pass
+    ports:
+      - 9000:8080
+    volumes:
+      - ${DOWNLOAD_DIR}:/media
+    restart: unless-stopped
