@@ -37,3 +37,27 @@ services:
     command: '-p                                              
                 -u "skarner;MninzzHkHNg2P8MxBMLYKKYEg"
                 -s "share;/share;yes;no;no;skarner;admin;admin;skarner专用"'
+
+  jellyfin:
+    image: nyanmisaka/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ${DOWNLOAD_DIR}/media:/media
+      # - config/jellyfin/config:/config
+      # - config/jellyfin/cache:/cache
+    ports:
+      - 8096:8096
+    devices:
+      - /dev/dri:/dev/dri
+    extra_hosts:
+      - "api.themoviedb.org:99.86.91.81"
+      - "api.themoviedb.org:99.86.91.93"
+      - "api.themoviedb.org:99.86.91.26"
+      - "api.themoviedb.org:99.86.91.78"
+      - "image.tmdb.org:143.244.50.209"
+      - "api.thetvdb.org:92.241.234.54"
