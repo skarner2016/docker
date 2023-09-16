@@ -68,4 +68,8 @@ services:
       - 3001:3001
     volumes:
       - ./data/uptime:/app/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
     restart: always
