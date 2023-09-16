@@ -61,3 +61,11 @@ services:
       - "api.themoviedb.org:99.86.91.78"
       - "image.tmdb.org:143.244.50.209"
       - "api.thetvdb.org:92.241.234.54"
+  uptime:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime
+    ports:
+      - 3001:3001
+    volumes:
+      - ./data/uptime:/app/data
+    restart: always
