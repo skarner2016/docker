@@ -4,7 +4,8 @@ services:
     image: jxxghp/moviepilot:latest
     container_name: moviepilot
     ports:
-      - 3083:3083
+      - 3083:3000
+      - 3084:3001
     volumes:
       - ${DOWNLOAD_DIR}/media:/media
     environment:
@@ -28,5 +29,5 @@ services:
       - JELLYFIN_API_KEY=a8dd656bb6dc4de78de3595c1b7ca02a
       - AUTH_SITE=ptlsp
       - PTLSP_UID=890436
-      - PTLSP_PASSKEY=ARn4xuttd27dkez
+      - PTLSP_PASSKEY=b4a60fafae98bef762ec83575bab2aa4
     restart: always
