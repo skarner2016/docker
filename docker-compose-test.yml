@@ -23,7 +23,7 @@ services:
       - DOWNLOADER=qbittorrent
       - QB_HOST=http://skarner.dns.army:3081/
       - QB_USER=skarner
-      - QB_PASSWORD="PHfK7Dgeq@AhD2&H9$gkxsG48"
+      - QB_PASSWORD="nZhJnWSVVCQt7NubwkgPWsJ4q"
       - MEDIASERVER=jellyfin
       - JELLYFIN_HOST=http://skarner.dns.army:8096/
       - JELLYFIN_API_KEY=a8dd656bb6dc4de78de3595c1b7ca02a
