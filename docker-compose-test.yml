@@ -1,7 +1,7 @@
 version: "3"
 services:
   moviepilot:
-    image: jxxghp/moviepilot:latest
+    image: jxxghp/moviepilot:1.2.3
     container_name: moviepilot
     ports:
       - 3083:3000
