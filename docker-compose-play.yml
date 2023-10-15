@@ -1,8 +1,8 @@
 version: "2"
 services:
-  qbittorrent:
+  qb:
     image: linuxserver/qbittorrent
-    container_name: qbittorrent
+    container_name: qb
     environment:
       - PUID=1000
       - PGID=1000
@@ -10,9 +10,15 @@ services:
       - UMASK_SET=022
       - WEBUI_PORT=8081 # 将此处修改成你欲使用的 WEB 管理平台端口
     volumes:
-#      - /home/qb/config:/config # 绝对路径请修改为自己的config文件夹
-      - ${DOWNLOAD_DIR}:/downloads # 绝对路径请修改为自己的downloads文件夹
-      - ${QB_DIR}:/qb # 绝对路径请修改为自己的downloads文件夹
+      - ./play/config:/config # 绝对路径请修改为自己的config文件夹
+      - ${PT_DIR}/downloads:/downloads # 绝对路径请修改为自己的downloads文件夹
+      - ${PT_DIR}/qb:/qb
+      - ${PT_DIR}/movie:/movie
+      - ${PT_DIR}/tv:/tv
+      - ${PT_DIR}/documentary:/documentary
+      - ${PT_DIR}/anime:/anime
+      - ${PT_DIR}/music:/music 
+      - ${PT_DIR}/other:/other 
     ports:
       # 要使用的映射下载端口与内部下载端口，可保持默认，安装完成后在管理页面仍然可以改成其他端口。
       - 6881:6881
@@ -28,12 +34,12 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai # 你的时区
-    restart: always
+    restart: unless-stopped
     ports:
       - 3139:139
       - 8082:445
     volumes:
-      - ${DOWNLOAD_DIR}:/share
+      - ${PT_DIR}:/share
     command: '-p                                              
                 -u "skarner;MninzzHkHNg2P8MxBMLYKKYEg"
                 -s "share;/share;yes;no;no;skarner;admin;admin;skarner专用"'
@@ -47,7 +53,7 @@ services:
       - PGID=1000
       - TZ=Asia/Shanghai
     volumes:
-      - ${DOWNLOAD_DIR}/media:/media
+      - ${PT_DIR}:/media
       # - config/jellyfin/config:/config
       # - config/jellyfin/cache:/cache
     ports:
@@ -61,15 +67,18 @@ services:
       - "api.themoviedb.org:99.86.91.78"
       - "image.tmdb.org:143.244.50.209"
       - "api.thetvdb.org:92.241.234.54"
-  uptime:
-    image: louislam/uptime-kuma:latest
-    container_name: uptime
-    ports:
-      - 8084:3001
-    volumes:
-      - ./data/uptime:/app/data
+
+  iyuu:
+    image: iyuucn/iyuuplus
+    container_name: iyuu
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-    restart: always
+    volumes:
+      - ${PT_DIR}
+
+networks:
+  docker-default:
+    driver: host
