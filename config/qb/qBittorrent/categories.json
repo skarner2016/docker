@@ -1,0 +1,20 @@
+{
+    "anime": {
+        "save_path": "/anime"
+    },
+    "documentray": {
+        "save_path": "/documentray"
+    },
+    "movie": {
+        "save_path": "/movie"
+    },
+    "music": {
+        "save_path": "/music"
+    },
+    "other": {
+        "save_path": "/other"
+    },
+    "tv": {
+        "save_path": "/tv"
+    }
+}

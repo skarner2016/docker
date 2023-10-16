@@ -1,66 +1,87 @@
-version: "3"
+version: "2"
 services:
-  php82:
-    image: skarner2016/php:82
-    container_name: php82
-    ports:
-      - 9000:9000
-      - 8000:8000
-    volumes:
-      - ../../../workspace:/var/www
-      - ./logs/php/81:/var/log/php
-    working_dir: /var/www
-    restart: always
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
-        max-file: "10"
-#    command: [ "/usr/local/bin/php", "/var/www/my-project/la8/artisan", "octane:start", "--watch", "--host=0.0.0.0" ]
-
-  nginx:
-    container_name: nginx
-    image: nginx:stable-alpine
-    ports:
-      - 8080:80
-    volumes:
-      - ../../../workspace:/var/www
-      - ./config/nginx:/etc/nginx/conf.d/
-      - ./logs/nginx:/var/log/nginx
-    working_dir: /var/www
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
-        max-file: "10"
-    restart: always
-
-  mysql:
-    container_name: mysql
-    image: mysql:latest
-    ports:
-      - 3306:3306
-    volumes:
-      - ./data/mysql:/var/lib/mysql
-      - ./config/mysql:/etc/mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
+  qb:
+    image: linuxserver/qbittorrent
+    container_name: qb
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
-        max-file: "10"
-
-  redis:
-    container_name: redis
-    image: redis:alpine
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai # 你的时区
+      - UMASK_SET=022
+      - WEBUI_PORT=8081 # 将此处修改成你欲使用的 WEB 管理平台端口
+    volumes:
+      - ./config/qb:/config # 绝对路径请修改为自己的config文件夹
+      - ${PT_DIR}/downloads:/downloads # 绝对路径请修改为自己的downloads文件夹
+      - ${PT_DIR}/qb:/qb
+      - ${PT_DIR}/movie:/movie
+      - ${PT_DIR}/tv:/tv
+      - ${PT_DIR}/documentary:/documentary
+      - ${PT_DIR}/anime:/anime
+      - ${PT_DIR}/music:/music 
+      - ${PT_DIR}/other:/other 
     ports:
-      - 6379:6379
-    restart: always
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
-        max-file: "10"
+      # 要使用的映射下载端口与内部下载端口，可保持默认，安装完成后在管理页面仍然可以改成其他端口。
+      - 6881:6881
+      - 6881:6881/udp
+      # 此处WEB UI 目标端口与内部端口务必保证相同，见问题1
+      - 8081:8081
+    restart: unless-stopped
+
+  samba:
+    image: dperson/samba
+    container_name: samba
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai # 你的时区
+    restart: unless-stopped
+    ports:
+      - 3139:139
+      - 8082:445
+    volumes:
+      - ${PT_DIR}:/share
+    command: '-p                                              
+                -u "skarner;MninzzHkHNg2P8MxBMLYKKYEg"
+                -s "share;/share;yes;no;no;skarner;admin;admin;skarner专用"'
+
+  jellyfin:
+    image: nyanmisaka/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ${PT_DIR}:/media
+      - ./config/jellyfin/config:/config
+      - ./config/jellyfin/cache:/cache
+    ports:
+      - 8083:8096
+    devices:
+      - /dev/dri:/dev/dri
+    extra_hosts:
+      - "api.themoviedb.org:99.86.91.81"
+      - "api.themoviedb.org:99.86.91.93"
+      - "api.themoviedb.org:99.86.91.26"
+      - "api.themoviedb.org:99.86.91.78"
+      - "image.tmdb.org:143.244.50.209"
+      - "api.thetvdb.org:92.241.234.54"
+
+  iyuu:
+    image: iyuucn/iyuuplus
+    container_name: iyuu
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./config/iyuu:/IYUU/db
+      - ./config/qb/qBittorrent/BT_backup:/BT_backup
+    ports:
+      - 8084:8787
+    restart: unless-stopped
+
+networks:
+  docker-default:
+    driver: host
