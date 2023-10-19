@@ -1,0 +1,10 @@
+.idea/
+.env
+/data/mysql
+/data/mysql-files
+/data/mysql57
+/data/redis
+
+/config/mysql
+/config/mysql57
+/config/redis

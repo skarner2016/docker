@@ -36,6 +36,8 @@ services:
     command: '-p                                              
                 -u "skarner;MninzzHkHNg2P8MxBMLYKKYEg"
                 -s "share;/share;yes;no;no;skarner;admin;admin;skarner专用"'
+    networks:
+      - docker_default
 
   jellyfin:
     image: nyanmisaka/jellyfin:latest
@@ -60,6 +62,8 @@ services:
       - "api.themoviedb.org:99.86.91.78"
       - "image.tmdb.org:143.244.50.209"
       - "api.thetvdb.org:92.241.234.54"
+    networks:
+      - docker_default
 
   iyuu:
     image: iyuucn/iyuuplus
@@ -74,7 +78,9 @@ services:
     ports:
       - 8084:8787
     restart: unless-stopped
+    networks:
+      - docker_default
 
 networks:
-  docker-default:
-    driver: host
+  docker_default:
+    driver: bridge
