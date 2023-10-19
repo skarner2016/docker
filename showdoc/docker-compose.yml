@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  showdoc:
+    image: star7th/showdoc:latest
+    container_name: showdoc
+    ports:
+      - 4999:80
+    volumes:
+      - ./data/html:/var/www/html/
+    restart: always
+    networks:
+      - docker_default
+
+networks:
+  docker_default:
+    driver: bridge
