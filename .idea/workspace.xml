@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="47df49b5-47ba-435c-a50e-42a58b5bd313" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="home" />
+                    <option name="lastUsedInstant" value="1692846560" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1688368884" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master_bak" />
+                    <option name="lastUsedInstant" value="1682495036" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="php70" />
+                    <option name="lastUsedInstant" value="1670397105" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="v1" />
+                    <option name="lastUsedInstant" value="1668069933" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CWAAVRVyfCdXGmqTPFGroKEaEn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="47df49b5-47ba-435c-a50e-42a58b5bd313" name="变更" comment="" />
+      <created>1658907823944</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658907823944</updated>
+      <workItem from="1658907826939" duration="2383000" />
+      <workItem from="1658990928681" duration="2986000" />
+      <workItem from="1659601462669" duration="484000" />
+      <workItem from="1659665825449" duration="307000" />
+      <workItem from="1663315626971" duration="2209000" />
+      <workItem from="1663553846505" duration="1767000" />
+      <workItem from="1663665841148" duration="487000" />
+      <workItem from="1663923767219" duration="2219000" />
+      <workItem from="1664365992494" duration="462000" />
+      <workItem from="1664421595469" duration="1455000" />
+      <workItem from="1666061526715" duration="1031000" />
+      <workItem from="1666164029628" duration="1682000" />
+      <workItem from="1667979476724" duration="849000" />
+      <workItem from="1667981222465" duration="111000" />
+      <workItem from="1667982711573" duration="1836000" />
+      <workItem from="1668069334091" duration="6740000" />
+      <workItem from="1670211149667" duration="132000" />
+      <workItem from="1670397020291" duration="5135000" />
+      <workItem from="1670498082303" duration="604000" />
+      <workItem from="1670811957247" duration="111000" />
+      <workItem from="1676000663785" duration="969000" />
+      <workItem from="1682477643314" duration="3603000" />
+      <workItem from="1685601276637" duration="3955000" />
+      <workItem from="1686537003961" duration="4683000" />
+      <workItem from="1686648033869" duration="16000" />
+      <workItem from="1688367706754" duration="1977000" />
+      <workItem from="1688529048421" duration="1266000" />
+      <workItem from="1692846549118" duration="5699000" />
+      <workItem from="1692959388983" duration="1173000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
