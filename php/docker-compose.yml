@@ -1,0 +1,76 @@
+version: '3'
+
+services:
+  php70:
+    image: skarner2016/php:70
+    container_name: php70
+    ports:
+      - 9001:9001
+    volumes:
+      - ${WORK_SPACE}:/var/www
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    restart: always
+    networks:
+      - docker_default
+
+  php72:
+    image: skarner2016/php:72
+    container_name: php72
+    ports:
+      - 9002:9002
+    volumes:
+      - ${WORK_SPACE}:/var/www
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    restart: always
+    networks:
+      - docker_default
+
+  php74:
+    image: skarner2016/php:74
+    container_name: php74
+    ports:
+      - 9003:9003
+    volumes:
+      - ${WORK_SPACE}:/var/www
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    restart: always
+    networks:
+      - docker_default
+
+  php80:
+    image: skarner2016/php:80
+    container_name: php80
+    ports:
+      - 9004:9004
+    volumes:
+      - ${WORK_SPACE}:/var/www
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    restart: always
+    networks:
+      - docker_default
+
+  php82:
+    image: skarner2016/php:82
+    container_name: php82
+    ports:
+      - 9005:9005
+    volumes:
+      - ${WORK_SPACE}:/var/www
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    restart: always
+    networks:
+      - docker_default
+
+networks:
+  docker_default:
+    driver: bridge

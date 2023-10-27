@@ -1,0 +1,45 @@
+version: "3"
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./data/mysql-files:/var/lib/mysql-files
+      - ./config/mysql:/etc/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASS
+    networks:
+      - docker_default
+
+  mysql57:
+    container_name: mysql57
+    image: mysql:5.7
+    ports:
+      - 3307:3306
+    volumes:
+      - ./data/mysql57:/var/lib/mysql
+      - ./config/mysql57:/etc/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASS
+    networks:
+      - docker_default
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    restart: always
+    networks:
+      - docker_default
+
+networks:
+  docker_default:
+    driver: bridge
