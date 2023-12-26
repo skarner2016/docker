@@ -7,10 +7,10 @@ services:
     ports:
       - 9999:80
     volumes:
-      - ${WORK_SPACE}:/var/www
+      - ${WORK_SPACE}:/var/www/html
     stdin_open: true
     tty: true
-    working_dir: /var/www
+    working_dir: /var/www/html
     restart: always
     networks:
       - docker_default
