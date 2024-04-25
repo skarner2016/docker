@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="47df49b5-47ba-435c-a50e-42a58b5bd313" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hyd/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hyd/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2CWAAVRVyfCdXGmqTPFGroKEaEn" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -73,12 +76,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/wordpress" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ew" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ew" />
       <recent name="$PROJECT_DIR$/wordpress" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -121,6 +125,10 @@
       <workItem from="1692846549118" duration="5699000" />
       <workItem from="1692959388983" duration="1173000" />
       <workItem from="1703587645419" duration="478000" />
+      <workItem from="1706404814192" duration="168000" />
+      <workItem from="1712483417768" duration="361000" />
+      <workItem from="1712483858150" duration="1954000" />
+      <workItem from="1714007535400" duration="1044000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  data-center:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: data-center
+    ports:
+      - 8002:8002
+    volumes:
+      - ${WORK_SPACE}/ew:/var/www
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    restart: always
+    command: ["/usr/local/bin/php", "-S", "0.0.0.0:8002","-t", "/var/www/data_center/public"]
+    networks:
+      - docker_default
+
+  platform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: platform
+    ports:
+      - 8001:8001
+    volumes:
+      - ${WORK_SPACE}/ew:/var/www
+    stdin_open: true
+    tty: true
+    working_dir: /var/www
+    restart: always
+    command: ["/usr/local/bin/php", "-S", "0.0.0.0:8001","-t", "/var/www/platform"]
+    networks:
+      - docker_default
+
+networks:
+  docker_default:
+    driver: bridge
