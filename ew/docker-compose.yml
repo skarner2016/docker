@@ -16,7 +16,7 @@ services:
     restart: always
     command: ["/usr/local/bin/php", "-S", "0.0.0.0:8002","-t", "/var/www/data_center/public"]
     networks:
-      - docker_default
+      - local_host
 
   platform:
     build:
@@ -33,8 +33,8 @@ services:
     restart: always
     command: ["/usr/local/bin/php", "-S", "0.0.0.0:8001","-t", "/var/www/platform"]
     networks:
-      - docker_default
+      - local_host
 
 networks:
-  docker_default:
+  local_host:
     driver: bridge
