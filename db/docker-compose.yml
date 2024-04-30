@@ -40,6 +40,28 @@ services:
     networks:
       - local_host
 
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.13.2
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://es:9200
+    networks:
+      - local_host
+
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.2
+    container_name: es
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    volumes:
+      - $MYSQL_DATA/es/data:/usr/share/elasticsearch/data
+    networks:
+      - local_host
+
 networks:
   local_host:
     driver: bridge
