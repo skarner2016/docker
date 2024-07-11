@@ -2,28 +2,12 @@ version: "3"
 services:
   mysql:
     container_name: mysql
-    image: mysql:latest
+    image: mysql:8.0
     ports:
       - 3306:3306
     volumes:
-      - $MYSQL_DATA/mysql8/data/mysql:/var/lib/mysql
-      - $MYSQL_DATA/mysql8/data/mysql-files:/var/lib/mysql-files
-      - $MYSQL_DATA/mysql8/config/mysql:/etc/mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: $MYSQL_PASS
-    networks:
-      - local_host
-
-  mysql57:
-    container_name: mysql57
-    image: mysql:5.7
-    ports:
-      - 3307:3306
-    volumes:
-      - $MYSQL_DATA/mysql57/data/mysql57:/var/lib/mysql
-      - $MYSQL_DATA/mysql57/config/mysql57:/etc/mysql
+      - ./mysql8/data/mysql:/var/lib/mysql
+      - ./mysql8/data/mysql-files:/var/lib/mysql-files
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -40,25 +24,17 @@ services:
     networks:
       - local_host
 
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.13.2
-    container_name: kibana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
     ports:
-      - "5601:5601"
-    environment:
-      - ELASTICSEARCH_HOSTS=http://es:9200
-    networks:
-      - local_host
-
-  es:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.2
-    container_name: es
-    environment:
-      - discovery.type=single-node
-    ports:
-      - "9200:9200"
+      - "3000:3000"
     volumes:
-      - $MYSQL_DATA/es/data:/usr/share/elasticsearch/data
+      - ./grafana/grafana-data:/var/lib/grafana
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    restart: always
     networks:
       - local_host
 
