@@ -1,4 +1,3 @@
-version: "3"
 services:
   mysql:
     container_name: mysql
@@ -6,8 +5,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./mysql8/data/mysql:/var/lib/mysql
-      - ./mysql8/data/mysql-files:/var/lib/mysql-files
+      - ${WORK_SPACE_DATA}/mysql8/data/mysql:/var/lib/mysql
+      - ${WORK_SPACE_DATA}/mysql8/data/mysql-files:/var/lib/mysql-files
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -30,8 +29,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./grafana/grafana-data:/var/lib/grafana
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ${WORK_SPACE_DATA}/grafana/grafana-data:/var/lib/grafana
+      - ${WORK_SPACE_DATA}/grafana/grafana.ini:/etc/grafana/grafana.ini
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     restart: always

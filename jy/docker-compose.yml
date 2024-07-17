@@ -1,37 +1,39 @@
 version: '3'
 
 services:
-  api:
+  php74:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: api
+      dockerfile: php74.Dockerfile
+    container_name: php74
     ports:
-      - 8001:8001
+      - 7401:7401
+      - 7402:7402
+      - 7403:7403
     volumes:
-      - ${WORK_SPACE}/joyhub_api:/var/www
+      - ${WORK_SPACE}:/var/www
     stdin_open: true
     tty: true
     working_dir: /var/www
     restart: always
-    command: ["/usr/local/bin/php", "-S", "0.0.0.0:8001","-t", "/var/www"]
     networks:
       - local_host
 
-  serv:
+  php82:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: serv
+      dockerfile: php82.Dockerfile
+    container_name: php82
     ports:
-      - 8002:8002
+      - 8201:8201
+      - 8202:8202
+      - 8203:8203
     volumes:
-      - ${WORK_SPACE}/joyhub_serv:/var/www
+      - ${WORK_SPACE}:/var/www
     stdin_open: true
     tty: true
     working_dir: /var/www
     restart: always
-    command: ["/usr/local/bin/php", "-S", "0.0.0.0:8002","-t", "/var/www"]
     networks:
       - local_host
 
