@@ -3,7 +3,7 @@ services:
     container_name: mysql
     image: mysql:8.0
     ports:
-      - 3306:3306
+      - 13306:3306
     volumes:
       - ${WORK_SPACE_DATA}/mysql8/data/mysql:/var/lib/mysql
       - ${WORK_SPACE_DATA}/mysql8/data/mysql-files:/var/lib/mysql-files

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="47df49b5-47ba-435c-a50e-42a58b5bd313" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/db/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,12 +78,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ew" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\skarner2016\docker\test" />
       <recent name="$PROJECT_DIR$/ew" />
       <recent name="$PROJECT_DIR$/wordpress" />
       <recent name="$PROJECT_DIR$" />
@@ -132,6 +135,11 @@
       <workItem from="1714388646778" duration="3996000" />
       <workItem from="1714463471617" duration="230000" />
       <workItem from="1714464604587" duration="677000" />
+      <workItem from="1721187675642" duration="807000" />
+      <workItem from="1721188519179" duration="21000" />
+      <workItem from="1721287675117" duration="5146000" />
+      <workItem from="1721304063032" duration="687000" />
+      <workItem from="1721617000420" duration="1256000" />
     </task>
     <servers />
   </component>

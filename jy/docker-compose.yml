@@ -9,7 +9,8 @@ services:
     ports:
       - 7401:7401
       - 7402:7402
-      - 7403:7403
+      - 55151:55151
+      - 7272:7272
     volumes:
       - ${WORK_SPACE}:/var/www
     stdin_open: true
